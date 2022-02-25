@@ -1,5 +1,7 @@
-/* 3a. Create a script file called file properties that reads a filename entered and outputs it
-properties */
+<<comment 
+3a. Create a script file called file properties that reads a filename entered and outputs it
+properties 
+comment
 
 if [ -e $1 ]
 then
