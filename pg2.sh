@@ -1,6 +1,8 @@
-/* 2a. Write a shell script that accepts two filenames as arguments, checks if the permissions for
+<<comment
+2a. Write a shell script that accepts two filenames as arguments, checks if the permissions for
 these files are identical and if the permissions are identical, output common permissions
 otherwise output each filename followed by its permissions. */
+comment
 
 echo -n "Enter the first file name: "
 read file1
