@@ -1,5 +1,7 @@
-/* 7a. Write a shell script that gets executed and displays the message either “Good Morning” or
+<<comment
+7a. Write a shell script that gets executed and displays the message either “Good Morning” or
 “Good Afternoon” or “Good Evening” depending upon time at which the user logs in. */
+comment
 
 h=`date +%H`
 if [ $h -ge 4 ] && [ $h -lt 12 ]
