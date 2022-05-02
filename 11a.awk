@@ -1,5 +1,5 @@
 BEGIN{
-	FS=" "
+	FS="-"
 	print("Book sold")
 	print("---------------------------")
 }
