@@ -1,21 +1,22 @@
 BEGIN{
 	print("Date Format Conversion")
 	FS="-"
-}
-
-{	
-	len=length
+	
+	len=length(dd)
 	string_month="JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC"
 	split(string_month,month,",")
-	split($0,date,"-")
+	split(dd,date,"-")
 	date[2]=date[2]+0
-}
-
-END{
+	
 	if(len==10 && date[1]>0 && date[2]>=1 && date[2]<=12)
 	{
-		if(date[2]==2 && date[1]<=29)
-			counter=1
+		if(date[2]==2)
+		{
+			if(date[3]%4==0 && date[1]<=29)
+				counter=1
+			else if(date[3]%4!=0 && date[1]<=28)
+				counter=1
+		}
 		if(date[2]!=2)
 		{
 			if(date[2]<=7)
@@ -45,3 +46,4 @@ END{
 	else
 		print("Invalid date format (dd-mm-yyyy) or Invalid date")
 }
+
