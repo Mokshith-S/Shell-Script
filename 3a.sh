@@ -1,7 +1,8 @@
 <<comment 
 3a. Create a script file called file properties that reads a filename entered and outputs it
 properties 
-comment
+comment 
+
 
 if [ -e $1 ]
 then
