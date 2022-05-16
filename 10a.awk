@@ -6,9 +6,9 @@ BEGIN{
 	string_month="JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEPT,OCT,NOV,DEC"
 	split(string_month,month,",")
 	split(dd,date,"-")
-	date[2]=date[2]+0
-	
-	if(len==10 && date[1]>0 && date[2]>=1 && date[2]<=12)
+	date[2]+=date[2]
+	date[3]+=2000
+	if(len==8 && date[1]>0 && date[2]>=1 && date[2]<=12)
 	{
 		if(date[2]==2)
 		{
