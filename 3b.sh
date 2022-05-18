@@ -1,16 +1,34 @@
-echo "Enter password"
+echo "Enter the password"
 stty -echo
-read pass
-stty echo
-echo "Enter confirm password"
+read p1
 stty -echo
-read pass2
-stty echo
-while [ $pass != $pass2 ]
+echo "Confirm password"
+stty -echo
+read p2
+stty -echo
+while [ "$p1" != "$p2" ]
 do
-	clear
-	echo "Password mismatch, Enter the password again"
-	stty -echo
-	read pass2
-	stty echo
+echo "Re enter the correct password "
+stty -echo
+read p2
+stty -echo
 done
+clear
+echo "-------------------------Terminal Locked-----------------------------"
+echo " Enter the password to unlock"
+stty -echo
+read p3
+stty -echo
+while [ "$p1" != "$p3" ]
+do
+clear
+echo "--------------------------Terminal Locked-----------------------------"
+echo "Password does not match"
+echo "Enter the correct password"
+stty -echo
+read p3
+stty echo
+done
+clear
+echo "--------------------------Terminal Unlocked---------------------------"
+clear
