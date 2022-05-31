@@ -1,15 +1,18 @@
-if [ $# -eq 1 ]
+if [ $# -ge 1 ]
 then
-grep $1 /etc/passwd > temp 
-if [ $? -eq 0 ]
-then
-echo "user exists"
-p=`grep $1 /etc/passwd | cut -d ":" -f 1,5`
-echo "User: $1"
-echo "User Home directory: $2"
+	for i in $*
+	do
+		if [ `grep "$i" /etc/passwd | wc -l` -eq 1 ]
+		then
+			echo "$i exists"
+			home=`grep "$i" /etc/passwd | cut -d ":" -f 6`
+			echo "Username: $i"
+			echo "User Home directory: $home"
+		else
+			echo "User doesn't exists"
+		fi
+		echo "------------------------------------"
+	done
 else
-echo "User doesn't exists"
-fi
-else
-echo "Give argument"
+	echo "Give atleast one arguement"
 fi
